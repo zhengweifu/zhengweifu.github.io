@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import { Layout, Breadcrumb, Icon } from 'antd';
 
@@ -10,8 +10,21 @@ import SiderPage from './SiderPage';
 
 // import 'antd/lib/content/style';
 
-class WorkPage extends React.Component {
+class WorkPage extends Component {
+	static propTypes = {
+		children: PropTypes.node,
+		siderSelectedKey: PropTypes.string,
+		breadcrunbs: PropTypes.array
+	};
+
+	static defaultProps = {
+		siderSelectedKey: '1',
+		breadcrunbs: ['工作', '三维制作']
+	};
+
 	render() {
+		const { children } = this.props;
+
 		return <Layout style={{backgroundColor: 'transparent'}}>
 			<Header className="header" style={{
 				backgroundColor: 'transparent',
@@ -22,15 +35,16 @@ class WorkPage extends React.Component {
 			</Header>
 			<Layout>
 				<Sider width={200} style={{ background: '#fff' }}>
-					<SiderPage />
+					<SiderPage selected={this.props.siderSelectedKey}/>
 				</Sider>
 				<Layout style={{ padding: 0 }}>
 					<Breadcrumb style={{ margin: '12px 24px' }}>
-						<Breadcrumb.Item>工作</Breadcrumb.Item>
-						<Breadcrumb.Item>三维制作</Breadcrumb.Item>
+						{this.props.breadcrunbs.map((item, index) => {
+							return <Breadcrumb.Item key={index}>{item}</Breadcrumb.Item>;
+						})}
 					</Breadcrumb>
 					<Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 280 }}>
-          				Content
+          				{ children }
         			</Content>
 				</Layout>
 			</Layout>

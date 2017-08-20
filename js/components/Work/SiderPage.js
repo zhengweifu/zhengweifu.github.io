@@ -1,15 +1,38 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import { Menu, Icon } from 'antd';
 
 const { SubMenu, MenuItemGroup  } = Menu;
 
-class SiderPage extends React.Component {
+class SiderPage extends Component {
+	static propTypes = {
+		selected: PropTypes.string
+	};
+
+	static defaultProps = {
+		selected: '1'
+	};
+
+	onClickHandle(option) {
+		let webPath = '/';
+		switch(option.key) {
+			case '1':
+				webPath = '/work/threemake';
+				break;
+			case '2-1':
+				webPath = '/work/threemodeltool';
+				break;
+		}
+		window.location.href = '#' + webPath;
+
+	}
+
   	render() {
 		return <Menu
-			selectedKeys={['1']}
+			selectedKeys={[this.props.selected]}
 			defaultOpenKeys={['2', '3', '4', '5', '6']}
 			mode="inline"
+			onClick={this.onClickHandle.bind(this)}
 		>
 			<Menu.Item key="1">
 				<Icon type="laptop" />三维制作
