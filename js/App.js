@@ -12,6 +12,8 @@ import ThreeMakePage from './components/Work/ThreeMakePage';
 import ThreeModelToolPage from './components/Work/ThreeModelToolPage';
 
 import MenuPage from './components/Work/React/MenuPage';
+import ButtonPage from './components/Work/React/ButtonPage';
+import IconPage from './components/Work/React/IconPage';
 
 let App = (props) => {
 	return <div>
@@ -20,6 +22,8 @@ let App = (props) => {
 		<Route exact path='/work/threemake' component={ThreeMakePage}/>
 		<Route exact path='/work/threemodeltool' component={ThreeModelToolPage}/>
 		<Route exact path='/work/reactmenu' component={MenuPage}/>
+		<Route exact path='/work/reactbutton' component={ButtonPage}/>
+		<Route exact path='/work/reacticon' component={IconPage}/>
 	</div>
 }
 

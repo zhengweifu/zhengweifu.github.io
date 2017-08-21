@@ -22,9 +22,14 @@ class SiderPage extends Component {
 			case '2-1':
 				webPath = '/work/threemodeltool';
 				break;
-
 			case '3-2-1':
 				webPath = '/work/reactmenu';
+				break;
+			case '3-2-2':
+				webPath = '/work/reactbutton';
+				break;
+			case '3-2-3':
+				webPath = '/work/reacticon';
 				break;
 		}
 		window.location.href = '#' + webPath;
@@ -52,6 +57,8 @@ class SiderPage extends Component {
 	            <Menu.Item key="3-1">WebGL</Menu.Item>
 	            <SubMenu key="3-2" title={<span><Icon type="laptop" />React 组件</span>}>
 	            	<Menu.Item key="3-2-1">Menu 菜单</Menu.Item>
+	            	<Menu.Item key="3-2-2">Button 按钮</Menu.Item>
+	            	<Menu.Item key="3-2-3">Icon 图标</Menu.Item>
 	            </SubMenu>
           	</SubMenu>
 			<SubMenu key="4" title={<span><Icon type="laptop" />后端开发</span>}>

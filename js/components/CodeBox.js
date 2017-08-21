@@ -30,6 +30,16 @@ class CodeBox extends Component {
 	render() {
 		const { children, codeComponent, borderColor, title, bottomSize } = this.props;
 		const padding = 10;
+		const isOpen = this.state.open && codeComponent !== undefined;
+		const codeIcon = codeComponent !== undefined ?
+			<span style={{
+					position: 'absolute',
+					top: padding + 2,
+					right: padding + 2
+				}} onClick={e => {
+					this.setState({open: !this.state.open});
+				}}><Icon type={this.state.open ? 'code-o' : 'code'} style={{ fontSize: 16, color: '#08c' }}/></span> :
+			'';
 		return <div style={{
 			border: `1px solid ${borderColor}`,
 			borderRadius: 4,
@@ -42,17 +52,11 @@ class CodeBox extends Component {
 				position: 'relative'
 			}}>
 				<h3>{title}</h3>
-				<span style={{
-					position: 'absolute',
-					top: padding + 2,
-					right: padding + 2
-				}} onClick={e => {
-					this.setState({open: !this.state.open});
-				}}><Icon type={this.state.open ? 'code-o' : 'code'} style={{ fontSize: 16, color: '#08c' }}/></span>
+				{codeIcon}
 			</div>
 			<div style={{
-				display: this.state.open ? 'block' : 'none',
-				borderTop: `1px dashed ${this.state.open ? borderColor : 'transparent'}`,
+				display: isOpen ? 'block' : 'none',
+				borderTop: `1px dashed ${isOpen ? borderColor : 'transparent'}`,
 				maxHeight: 500,
 				overflow: 'auto',
 				padding: padding - 6
