@@ -22,6 +22,10 @@ class SiderPage extends Component {
 			case '2-1':
 				webPath = '/work/threemodeltool';
 				break;
+
+			case '3-2-1':
+				webPath = '/work/reactmenu';
+				break;
 		}
 		window.location.href = '#' + webPath;
 
@@ -30,9 +34,10 @@ class SiderPage extends Component {
   	render() {
 		return <Menu
 			selectedKeys={[this.props.selected]}
-			defaultOpenKeys={['2', '3', '4', '5', '6']}
+			defaultOpenKeys={['2', '3', '3-2', '4', '5', '6']}
 			mode="inline"
 			onClick={this.onClickHandle.bind(this)}
+			style={{borderRight: 'none'}}
 		>
 			<Menu.Item key="1">
 				<Icon type="laptop" />三维制作
@@ -45,7 +50,9 @@ class SiderPage extends Component {
           	</SubMenu>
 			<SubMenu key="3" title={<span><Icon type="laptop" />前端开发</span>}>
 	            <Menu.Item key="3-1">WebGL</Menu.Item>
-	            <Menu.Item key="3-2">React 组件</Menu.Item>
+	            <SubMenu key="3-2" title={<span><Icon type="laptop" />React 组件</span>}>
+	            	<Menu.Item key="3-2-1">Menu 菜单</Menu.Item>
+	            </SubMenu>
           	</SubMenu>
 			<SubMenu key="4" title={<span><Icon type="laptop" />后端开发</span>}>
 	            <Menu.Item key="4-1">PHP</Menu.Item>

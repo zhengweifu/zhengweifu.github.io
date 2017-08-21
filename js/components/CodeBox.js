@@ -16,21 +16,24 @@ class CodeBox extends Component {
 		codeComponent: PropTypes.node,
 		borderColor: PropTypes.string,
 		title: PropTypes.string,
+		bottomSize: PropTypes.number,
 		open: PropTypes.bool
 	};
 
 	static defaultProps = {
 		open: false,
 		borderColor: '#e9e9e9',
+		bottomSize: 20,
 		title: 'tile'
 	};
 
 	render() {
-		const { children, codeComponent, borderColor, title } = this.props;
+		const { children, codeComponent, borderColor, title, bottomSize } = this.props;
 		const padding = 10;
 		return <div style={{
 			border: `1px solid ${borderColor}`,
-			borderRadius: 4
+			borderRadius: 4,
+			marginBottom: bottomSize
 		}}>
 			<div style={{padding: padding}}>{children}</div>
 			<div style={{

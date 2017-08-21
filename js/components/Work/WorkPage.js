@@ -34,7 +34,7 @@ class WorkPage extends Component {
 				<HeaderPage selected='work'/>
 			</Header>
 			<Layout>
-				<Sider width={200} style={{ background: '#fff' }}>
+				<Sider width={200} style={{ background: '#fff',  borderRight: '1px solid #e9e9e9' }}>
 					<SiderPage selected={this.props.siderSelectedKey}/>
 				</Sider>
 				<Layout style={{ padding: 0 }}>
@@ -48,7 +48,7 @@ class WorkPage extends Component {
         			</Content>
 				</Layout>
 			</Layout>
-			<Footer style={{ textAlign: 'center' }}>
+			<Footer style={{ textAlign: 'center', borderTop: '1px solid #e9e9e9' }}>
 		    	The Design ©2017 Created by Fun.Zheng
 		    </Footer>
 		</Layout>
