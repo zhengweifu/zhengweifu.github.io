@@ -180,7 +180,7 @@ export default () => {
                     </SubMenu>
                 </Menu>
             </CodeBox>
-            <CodeBox title='侧栏亮色' codeComponent={<SyntaxHighlighter language='javascript' style={xcode}>{MenuExampleHLight}</SyntaxHighlighter>}>
+            <CodeBox title='侧栏亮色' codeComponent={<SyntaxHighlighter language='javascript' style={xcode}>{MenuExampleVLight}</SyntaxHighlighter>}>
                 <Menu mode='vertical' theme='light'>
                     <MenuItem />
                     <SubMenu open={true}>
@@ -204,5 +204,6 @@ export default () => {
             </CodeBox>
         </GridList>
         <h2>API</h2>
+        
     </WorkPage>
 };
