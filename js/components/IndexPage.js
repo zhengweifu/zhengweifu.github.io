@@ -6,11 +6,9 @@ import { Route } from 'react-router-dom';
 
 import HeaderPage from './HeaderPage';
 
-const IndexPage = () => {
+export default () => {
 	return <div>
 		<HeaderPage />
-		<Button>aaaa</Button>
+		main page
 	</div>
 }
-
-export default IndexPage;

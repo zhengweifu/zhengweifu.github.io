@@ -2,21 +2,12 @@ import React, { Component } from 'react';
 
 import WorkPage from './WorkPage';
 
-import CodeBox from '../CodeBox';
+import CommonRenderRelative from './CommonRenderRelative';
 
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { xcode } from 'react-syntax-highlighter/dist/styles';
-
-const codeString = [
-    "def test():",
-    "   for x in [1, 2 ,3]:",
-    "       print x"
-].join('\n');
+import { WEB_ROOT } from '../../config';
 
 export default () => {
-    return <WorkPage siderSelectedKey='1' breadcrunbs={['工作', '三维制作']}>
-        <CodeBox codeComponent={<SyntaxHighlighter language='python' style={xcode}>{codeString}</SyntaxHighlighter>}>
-            Image
-        </CodeBox>
-    </WorkPage>
+	return <WorkPage siderSelectedKey='1'  breadcrunbs={['工作', '三维制作']}>
+		<CommonRenderRelative relativePathName={`${WEB_ROOT}images/threeMake/`} relativeFileName='relative.json' />;
+	</WorkPage>
 };
