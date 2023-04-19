@@ -2,9 +2,13 @@
 	"name": "Falconv渲染器",
 	"imagePath": "falconv01.png",
 	"bgColor": "#000000"
-}, {
+},{
 	"name": "Falconv渲染器",
 	"imagePath": "falconv02.png",
+	"bgColor": "#000000"
+},{
+	"name": "Falconv渲染器",
+	"imagePath": "falconv03.png",
 	"bgColor": "#000000"
 },{
 	"name": "广阳岛项目开发",
